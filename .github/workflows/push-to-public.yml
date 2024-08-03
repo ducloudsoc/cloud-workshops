@@ -16,12 +16,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: du-cloud-soc/cloud-workshops-private
-          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           ref: main
   
       - name: Push to public repo
         env:
-          PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+          PUBLIC_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git remote add public-repo https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/du-cloud-soc/cloud-workshops.git
           git push public-repo main --force
