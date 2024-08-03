@@ -25,6 +25,8 @@ jobs:
         with:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: "cloud-workshops,cloud-workshops-private"
 
       # - name: Configure Git
       #   run: |
