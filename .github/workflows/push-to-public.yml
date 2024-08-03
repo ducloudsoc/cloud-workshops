@@ -1,0 +1,27 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Push to Public
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout private repo
+        uses: actions/checkout@v2
+        with:
+          repository: du-cloud-soc/cloud-workshops-private
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          ref: main
+  
+      - name: Push to public repo
+        env:
+          PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+        run: |
+          git remote add public-repo https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/du-cloud-soc/cloud-workshops.git
+          git push public-repo main --force
