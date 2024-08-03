@@ -23,6 +23,7 @@ jobs:
         env:
           PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_TOKEN }}
         run: |
+          git config --global credential.useHttpPath true
           git remote add public-repo https://$PUBLIC_REPO_TOKEN@github.com/du-cloud-soc/cloud-workshops.git
           git push public-repo main --force
 
