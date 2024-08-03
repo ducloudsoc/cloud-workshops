@@ -28,10 +28,10 @@ jobs:
           owner: ${{ github.repository_owner }}
           repositories: "cloud-workshops,cloud-workshops-private"
 
-      # - name: Configure Git
-      #   run: |
-      #     git config --global user.name "DU Cloud Society App"
-      #     git config --global user.email "du-cloud-soc+github-actions[bot]@users.noreply.github.com"
+      - name: Configure Git
+        run: |
+          git config --global user.name "DU Cloud Society App"
+          git config --global user.email "du-cloud-soc+github-actions[bot]@users.noreply.github.com"
   
       - name: Push to public repo
         env:
