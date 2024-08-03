@@ -23,5 +23,6 @@ jobs:
         env:
           PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_TOKEN }}
         run: |
-          git remote add public-repo https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/du-cloud-soc/cloud-workshops.git
+          git remote add public-repo https://${PUBLIC_REPO_TOKEN}@github.com/du-cloud-soc/cloud-workshops.git
           git push public-repo main --force
+
