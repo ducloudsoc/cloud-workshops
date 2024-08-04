@@ -32,15 +32,15 @@ jobs:
           owner: ${{ github.repository_owner }}
           repositories: "cloud-workshops,cloud-workshops-private"
 
-      # - name: Configure Git
-      #   run: |
-      #     git config --global user.name "DU Cloud Society App"
-      #     git config --global user.email "du-cloud-soc+github-actions[bot]@users.noreply.github.com"
+      - name: Configure Git
+        run: |
+          git config --global user.name "DU Cloud Society App"
+          git config --global user.email "du-cloud-soc+github-actions[bot]@users.noreply.github.com"
 
-      # - name: Push to public repo
-      #   env:
-      #     PUBLIC_REPO_TOKEN: ${{ steps.generate-token.outputs.token }}
-      #   run: |
-      #     git remote add public-repo "https://x:${{ steps.generate-token.outputs.token }}@github.com/du-cloud-soc/cloud-workshops.git"
-      #     git push public-repo main --force
+      - name: Push to public repo
+        env:
+          PUBLIC_REPO_TOKEN: ${{ steps.generate-token.outputs.token }}
+        run: |
+          git remote add public-repo "https://x:${{ steps.generate-token.outputs.token }}@github.com/du-cloud-soc/cloud-workshops.git"
+          git push public-repo main --force
 
