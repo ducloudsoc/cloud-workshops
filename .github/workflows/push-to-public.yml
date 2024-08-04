@@ -16,9 +16,8 @@ jobs:
 
     steps:
       - name: Checkout private repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          repository: du-cloud-soc/cloud-workshops-private
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: main
           fetch-depth: 0
