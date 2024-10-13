@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 5000
 
 # Set the entrypoint command to run the Flask application
-CMD python -m flask --app hello_world run
+CMD python -m flask --app hello_world run --host=0.0.0.0
