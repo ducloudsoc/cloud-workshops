@@ -1,0 +1,17 @@
+# Exclude Python cache files
+__pycache__
+*.pyc
+
+# Exclude version control directories
+.git
+.gitignore
+
+# Exclude environment variable files
+.env
+
+# Exclude logs
+*.log
+
+# Exclude any other unnecessary files
+*.tmp
+*.swp

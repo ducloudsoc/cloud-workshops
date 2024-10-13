@@ -1,0 +1,8 @@
+services:
+  flask-server:
+    build:
+      context: ./server
+    ports:
+      - "5005:5000"
+    volumes:
+      - ./server/volume.txt:/app/volume.txt
