@@ -8,5 +8,8 @@ def hello_world():
 
 @app.route("/volume")
 def volume():
-    with open("volume.txt", 'r') as file:
-        return file.read()
+    try:
+        with open("volume.txt", 'r') as file:
+            return file.read()
+    except:
+        return

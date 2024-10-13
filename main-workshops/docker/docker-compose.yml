@@ -1,8 +1,32 @@
 services:
-  flask-server:
+  server:
     build:
       context: ./server
     ports:
       - "5005:5000"
     volumes:
       - ./server/volume.txt:/app/volume.txt
+    networks:
+      - internal
+
+  client:
+    build:
+      context: ./client
+    ports:
+      - "5006:80"
+    networks:
+      - internal
+
+  proxy:
+    build:
+      context: ./proxy
+    ports:
+      - "8080:81"
+    networks:
+      - internal
+    depends_on:
+      - client
+      - server
+
+networks:
+  internal:

@@ -34,3 +34,11 @@ Then, run the docker image. You can map your device ports using the -p flag:
 `docker run <your-tag> [-p 5000:5000]`
 
 ### Docker Compose
+
+### Volumes
+Volumes map files from your device to the container, meaning that you can change the content on your device and changes will register in the container.
+
+These are particularly useful for persistent storage and hot-reloading.
+
+### Multiple Containers
+Simply specify as more services in the docker compose file.

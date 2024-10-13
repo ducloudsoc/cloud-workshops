@@ -15,3 +15,6 @@ __pycache__
 # Exclude any other unnecessary files
 *.tmp
 *.swp
+
+Dockerfile
+.dockerignore
