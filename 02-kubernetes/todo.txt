@@ -1,4 +1,0 @@
-- Instructions for setting up kubectl and logging in
-- Set up cluster with router
-- Finish README
-- Add PV configs
