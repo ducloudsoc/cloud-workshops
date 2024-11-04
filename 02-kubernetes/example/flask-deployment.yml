@@ -18,10 +18,3 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
-        volumeMounts:
-        - name: flask-volume
-          mountPath: /app/data
-      volumes:
-      - name: flask-volume
-        persistentVolumeClaim:
-          claimName: flask-pvc
