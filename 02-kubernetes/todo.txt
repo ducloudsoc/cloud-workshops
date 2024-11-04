@@ -1,4 +1,4 @@
-- Lights should be triggered by a script (to test load balancing requests)
-- Script to set up users and userroles
 - Instructions for setting up kubectl and logging in
 - Set up cluster with router
+- Finish README
+- Add PV configs
