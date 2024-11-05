@@ -25,7 +25,11 @@ Follow [this guide](https://kubernetes.io/docs/tasks/tools/#kubectl) to install 
 ### Setting up kubectl
 We now need to create the kubectl config to connect to the cluster.
 
-ADD INSTRUCTIONS WILL!!!
+Create the folder ~/.kube, then create a file called config inside it.
+
+The contents of the config file will be distributed via an encrypted messaging platorm, which we will share during the workshop.
+
+Finally, connect to the Pi Cluster network. The password will also be distributed during the workshop.
 
 ### Deploying an nginx pod
 Work through [this guide](https://kubernetes.io/docs/concepts/workloads/pods/#using-pods) to create an nginx pod.
@@ -41,8 +45,8 @@ Once again, run `kubectl apply -f nginx-deployment.yml`
 Work through [this guide](https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service), making sure to specify the type as NodePort. Check the example for reference.
 
 ### Deploying a dockerized application
-Build the docker image of the server: `docker build --platform linux/arm64 -t demo-flask ./server`
-Tag the image with IP of the cluster: `docker tag demo-flask:latest 192.168.1.233:30007/demo-flask:latest`
+Build the docker image of the server: `docker build --platform linux/arm64 -t demo-flask ./server`\
+Tag the image with IP of the cluster: `docker tag demo-flask:latest 192.168.1.233:30007/demo-flask:latest`\
 Push the image to the cluster registry: `docker push 192.168.1.233:30007/demo-flask:latest`
 
 You can then reference the image in your container specification: `image: localhost:30007/demo-flask:latest`
